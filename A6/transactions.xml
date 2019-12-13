@@ -1,0 +1,16 @@
+<TransactionBatch>
+  <Transaction>
+    <IBAN-Account>DE99876543210987654321</IBAN-Account>
+    <IBAN-ContraAccount>DE11223344556677889900</IBAN-ContraAccount>
+    <ID>1</ID>
+    <Amount>50.0</Amount>
+    <ReasonForPayment>ReNr. 123</ReasonForPayment>
+  </Transaction>
+  <Transaction>
+    <ID>2</ID>
+    <Amount>80.0</Amount>
+    <IBAN-Account>DE11223344556677889900</IBAN-Account>
+    <IBAN-ContraAccount>DE99887766554433221100</IBAN-ContraAccount>
+    <ReasonForPayment>Miete Dezember 2019</ReasonForPayment>
+  </Transaction>
+</TransactionBatch>

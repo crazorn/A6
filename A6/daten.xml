@@ -1,0 +1,98 @@
+<Data>
+  <Customer>
+    <ID>4711</ID>
+    <Name>Egon Muster</Name>
+    <Birthday>
+      <Day>7</Day>
+      <Month>7</Month>
+      <Year>1977</Year>
+    </Birthday>
+    <Address>
+      <Street>Mustergasse 3a</Street>
+      <Postcode>99889</Postcode>
+      <Town>Musterstadt</Town>
+    </Address>
+  </Customer>
+  <Customer>
+    <Name>Anton Muster</Name>
+    <ID>0815</ID>
+    <Address>
+      <Street>Mustergasse 3a</Street>
+      <Postcode>99889</Postcode>
+      <Town>Musterstadt</Town>
+    </Address>
+    <Birthday>
+      <Day>7</Day>
+      <Month>7</Month>
+      <Year>1977</Year>
+    </Birthday>
+  </Customer>
+  <Customer>
+    <Birthday>
+      <Day>7</Day>
+      <Month>7</Month>
+      <Year>1977</Year>
+    </Birthday>
+    <Address>
+      <Street>Mustergasse 3a</Street>
+      <Postcode>99889</Postcode>
+      <Town>Musterstadt</Town>
+    </Address>
+    <ID>1234</ID>
+    <Name>Paul Muster</Name>
+  </Customer>
+  <Bank>
+    <Name>Berliner Spasskasse</Name>
+    <BIC>BESPKADEXXX</BIC>
+  </Bank>
+  <Bank>
+    <BIC>DEHOBADEXXX</BIC>
+    <Name>Deutsche Hochschul-Bank</Name>
+  </Bank>
+  <Account>
+    <IBAN>DE99123456781234567890</IBAN>
+    <Customer>4711</Customer>
+    <Bank>BESPKADEXXX</Bank>
+    <Balance>
+      <Amount>150.0</Amount>
+      <Currency>EUR</Currency>
+    </Balance>
+  </Account>
+  <CurrentAccount>
+    <IBAN>DE99876543210987654321</IBAN>
+    <Customer>4711</Customer>
+    <Bank>DEHOBADEXXX</Bank>
+    <Balance>
+      <Amount>150.0</Amount>
+      <Currency>EUR</Currency>
+    </Balance>
+    <Dispo>
+      <Amount>250.0</Amount>
+      <Currency>EUR</Currency>
+    </Dispo>
+  </CurrentAccount>
+  <SavingsAccount>
+    <IBAN>DE11223344556677889900</IBAN>
+    <Customer>0815</Customer>
+    <Bank>BESPKADEXXX</Bank>
+    <Balance>
+      <Amount>150.0</Amount>
+      <Currency>EUR</Currency>
+    </Balance>
+    <InterestRate>-2.5</InterestRate>
+  </SavingsAccount>
+  <FixedDepositAccount>
+    <IBAN>DE99887766554433221100</IBAN>
+    <Customer>1234</Customer>
+    <InterestRate>0.2</InterestRate>
+    <Bank>DEHOBADEXXX</Bank>
+    <Balance>
+      <Amount>150.0</Amount>
+      <Currency>EUR</Currency>
+    </Balance>
+    <Dispo>
+      <Amount>499.0</Amount>
+      <Currency>EUR</Currency>
+    </Dispo>
+  </FixedDepositAccount>
+</Data>

@@ -9,7 +9,7 @@ CTransactionBatch::CTransactionBatch(string file)
 {
 	ifstream ifs(file);
 	if (ifs) {
-		cout << "Datei wurde erfolgreich geoeffnet und wird jetzt eingelesen:" << endl;
+		cout << "Datei wurde erfolgreich geoeffnet und wird jetzt eingelesen..." << endl;
 	}
 	else {
 		cout << "Error!" << endl;
@@ -44,7 +44,7 @@ CTransactionBatch::CTransactionBatch(string file)
 	//set time for transaktion
 
 	Timestamp = CTimestamp();
-	cout << "Wurde eingelesen." << endl;
+	cout << "Datei wurde eingelesen." << endl;
 }
 
 

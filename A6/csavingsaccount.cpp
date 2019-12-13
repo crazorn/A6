@@ -90,3 +90,15 @@ void CSavingsAccount::load(stringstream& stream, vector<CBank*> BankList, vector
 	}
 	CSavingsAccount* acc = new CSavingsAccount(tmp_bank, tmp_iban, tmp_customer, CMoney::load(balancestream), tmp_intrest);
 }
+
+void CSavingsAccount::write(ostream& stream) {
+	CAccount::write(stream);
+	stream << "\n";
+	stream << left << setw(12) << "Sparzinsen:";
+	stream << intrestrate << " %";
+}
+
+std::ostream& operator<<(std::ostream& stream, CSavingsAccount& acc) {
+	acc.write(stream);
+	return stream;
+}

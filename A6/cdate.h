@@ -20,8 +20,13 @@ public:
 	CDate(int day, int month, int year): Day(day), Month(month), Year(year){}
 	~CDate(){}
 
+	CDate& getRefDate() { return *this; }
 	static CDate load(std::stringstream& stream);
 	void print() {
 		printf("%02d.%02d.%04d", Day, Month, Year);
+	}
+	friend std::ostream& operator<<(std::ostream& stream, CDate& time) {
+		//stream << time.Day << "." << time.Month << "." << time.Year;
+		return stream;
 	}
 };

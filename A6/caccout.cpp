@@ -129,3 +129,18 @@ void CAccount::Set_Customer(CCustomer* Customer) {
 	Customer->addAccount(this);
 	this->customer = Customer;
 }
+
+void CAccount::write(ostream& stream){
+	stream << left << setw(12) << "Kunde: " << customer->Get_Name() << " (Kd-Nr. " << customer->Get_ID() << ")\n";
+	stream << left << setw(12) << "IBAN/BIC: ";
+	stream << Get_IBAN();
+	stream << " / " << bank->Get_BIC();
+	stream << "\n";
+	stream << left << setw(12) << "Kontostand: ";
+	stream << balance.toString();
+}
+
+std::ostream& operator<<(std::ostream& stream, CAccount& acc) {
+	acc.write(stream);
+	return stream;
+}

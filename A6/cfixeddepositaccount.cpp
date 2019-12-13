@@ -104,3 +104,15 @@ void CFixedDepositAccount::load(stringstream& stream, vector<CBank*> BankList, v
 	}
 	CFixedDepositAccount* acc = new CFixedDepositAccount(tmp_bank, tmp_iban, tmp_customer, CMoney::load(balancestream), tmp_intrest, CMoney::load_ptr(dispostream));
 }
+
+void CFixedDepositAccount::write(ostream& stream) {
+	CCurrentAccount::write(stream);
+	stream << "\n";
+	stream << left << setw(12) << "Sparzinsen:";
+	stream << CSavingsAccount::GetIntrestrate() << " %" << endl;
+}
+
+std::ostream& operator<<(std::ostream& stream, CFixedDepositAccount& acc) {
+	acc.write(stream);
+	return stream;
+}

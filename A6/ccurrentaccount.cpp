@@ -97,3 +97,15 @@ void CCurrentAccount::load(stringstream& stream, vector<CBank*> BankList, vector
 	return;
 }
 
+void CCurrentAccount::write(ostream& stream) {
+	CAccount::write(stream);
+	stream << "\n";
+	stream << left << setw(12) << "Dispo:";
+	stream << disposit->toString();
+}
+
+std::ostream& operator<<(std::ostream& stream, CCurrentAccount& acc) {
+	acc.write(stream);
+	return stream;
+}
+

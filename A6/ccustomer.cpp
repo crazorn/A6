@@ -1,5 +1,6 @@
 #include "ccustomer.h"
 
+
 void CCustomer::print()
 {
 	cout << name << " (Kd-Nr. " << id << ")\n";
@@ -9,9 +10,10 @@ void CCustomer::print()
 	cout << "\nKonten:\n";
 	for (auto account : accountList)
 	{
-		cout << "- Kontonr.: ";
+		/*cout << "- Kontonr.: ";
 		account->Print_IBAN();
-		cout << endl;
+		cout << endl;*/
+		cout << *account << endl;
 	}
 }
 

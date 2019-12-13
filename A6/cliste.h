@@ -51,7 +51,7 @@ public:
 		Listenelement* aktuell; // Zeiger auf
 						 // aktuelles Element
 	public:
-		friend Liste;    // wg. erase-Zugriff
+		friend class Liste;    // wg. erase-Zugriff
 						 // auf aktuell
 		Iterator(Listenelement* Init = NULL)
 			: aktuell(Init)

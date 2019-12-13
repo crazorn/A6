@@ -3,6 +3,7 @@
 #include "cdate.h"
 #include "cweekday.h"
 #include <time.h>
+#include <iomanip>
 #include <iostream>
 
 
@@ -11,6 +12,9 @@ class CTimestamp :
 {
 	CWeekday weekday;
 public:
+	
+	//static bool fulldate;
+
 	CTimestamp(int day, int month, int year,int Hour, int Minute, int Second = 0):CDate(year, month, day),CTime(Hour, Minute, Second) {
 		std::tm time_in = { Second, Minute, Hour, day, month - 1, year };
 		time_t time_tmp = mktime(&time_in);
@@ -26,12 +30,14 @@ public:
 		//nochmal debuggen
 		weekday = CWeekday(local.tm_wday);
 	}
-
 	void print();
 	~CTimestamp() {}
 
-	friend void operator<<(std::ostream stream,CTimestamp& timestamp) {
-
+	friend CTimestamp& printDateTime(CTimestamp& time) {
+		//time.fulldate = true;
+		return time;
 	}
+
+	friend std::ostream& operator<<(std::ostream& stream, CTimestamp& time);
 };
 

@@ -37,3 +37,44 @@ void CTimestamp::print()
 	std::cout << " ";
 	CTime::print();
 }
+
+std::ostream& operator<<(std::ostream& stream, CTimestamp& time) {
+	std::string tmp_weekday;
+	switch (time.weekday)
+	{
+	case CWeekday::Monday:
+		tmp_weekday = "Mo";
+		break;
+	case CWeekday::Tuesday:
+		tmp_weekday = "Di";
+		break;
+	case CWeekday::Wednesday:
+		tmp_weekday = "Mi";
+		break;
+	case CWeekday::Thursday:
+		tmp_weekday = "Do";
+		break;
+	case CWeekday::Friday:
+		tmp_weekday = "Fr";
+		break;
+	case CWeekday::Saturday:
+		tmp_weekday = "Sa";
+		break;
+	case CWeekday::Sunday:
+		tmp_weekday = "So";
+		break;
+	default:
+		tmp_weekday = "Unknown";
+		break;
+	}
+	stream << std::setw(4) << tmp_weekday;
+	stream << time.getRefTime() << "\n";
+	/*
+	if (time.fulldate) {
+		stream << time.getRefDate();
+	}
+	*/
+	return stream;
+}
+
+

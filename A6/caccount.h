@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <iostream>
 #include "cmoney.h"
 #include "ccustomer.h"
 #include "cbank.h"
@@ -33,4 +34,8 @@ public:
 	void Set_Balance(CMoney Balance) { this->balance = Balance; }
 	CCustomer* Get_Customer() { return customer; }
 	void Set_Customer(CCustomer* Customer);
+	
+	virtual void write(ostream& str);
+
+	friend std::ostream& operator<<(std::ostream& stream, CAccount& acc);
 };

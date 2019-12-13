@@ -15,6 +15,11 @@ public:
 		CAccount::Print_IBAN();
 		cout << ") vernichtet!\n";
 	}
+	virtual void write(ostream& stream);
+	friend std::ostream& operator<<(std::ostream& stream, CFixedDepositAccount& acc);
+
 	static void load(stringstream& stream, vector<CBank*> BankList, vector<CCustomer*> CustomerList);
+
+	
 };
 

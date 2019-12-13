@@ -10,9 +10,6 @@ void CCustomer::print()
 	cout << "\nKonten:\n";
 	for (auto account : accountList)
 	{
-		/*cout << "- Kontonr.: ";
-		account->Print_IBAN();
-		cout << endl;*/
 		cout << *account << endl;
 	}
 }

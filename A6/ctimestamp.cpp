@@ -1,6 +1,9 @@
 #include "ctimestamp.h"
 #include <iomanip>
 
+bool CTimestamp::fulldate = true;
+
+
 void CTimestamp::print()
 {
 	std::string tmp_weekday;
@@ -67,11 +70,11 @@ std::ostream& operator<<(std::ostream& stream, CTimestamp& time) {
 		tmp_weekday = "Unknown";
 		break;
 	}
-	stream << std::setw(4) << tmp_weekday;
-	stream << time.getRefTime() << "\n";
+	stream << std::setw(4) << tmp_weekday << "," ;
+	stream << " " << time.getRefDate() << ";  ";
 	
 	if (time.fulldate) {
-		stream << time.getRefDate();
+		stream << time.getRefTime();
 	}
 	
 	return stream;

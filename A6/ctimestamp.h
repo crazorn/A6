@@ -21,7 +21,6 @@ public:
 		std::tm local;
 		localtime_s(&local, &time_tmp);
 		weekday = CWeekday(local.tm_wday);
-		fulldate = true;
 	}
 	CTimestamp(): CDate(), CTime() {
 		time_t rawtime;
@@ -30,16 +29,22 @@ public:
 		localtime_s(&local, &rawtime);
 		//nochmal debuggen
 		weekday = CWeekday(local.tm_wday);
-		fulldate = true;
 	}
 	void print();
 	~CTimestamp() {}
 
-	std::ostream& printDateTime(std::ostream stream) {
-		CTimestamp::fulldate = true;
-		return stream;
-	}
-
 	friend std::ostream& operator<<(std::ostream& stream, CTimestamp& time);
 };
+
+
+
+inline std::ostream& printDateTime(std::ostream& stream) {
+	CTimestamp::fulldate = true;
+	return stream;
+}
+
+inline std::ostream& printOnlyDate(std::ostream& stream) {
+	CTimestamp::fulldate = false;
+	return stream;
+}
 

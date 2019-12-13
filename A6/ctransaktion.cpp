@@ -13,9 +13,9 @@ void CTransaktion::print()
 void CTransaktion::execute()
 {
 	//Remove from Base
-	Account->Set_Balance(Account->Get_Balance() - Amount - TransaktionFee);
+	ContraAccount->Set_Balance(ContraAccount->Get_Balance() - Amount - TransaktionFee);
 	//Add to receiver
-	ContraAccount->Set_Balance(ContraAccount->Get_Balance() + Amount);
+	Account->Set_Balance(Account->Get_Balance() + Amount);
 }
 
 CTransaktion* CTransaktion::load(stringstream& stream)

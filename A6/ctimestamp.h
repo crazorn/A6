@@ -13,7 +13,7 @@ class CTimestamp :
 	CWeekday weekday;
 public:
 	
-	//static bool fulldate;
+	static bool fulldate;
 
 	CTimestamp(int day, int month, int year,int Hour, int Minute, int Second = 0):CDate(year, month, day),CTime(Hour, Minute, Second) {
 		std::tm time_in = { Second, Minute, Hour, day, month - 1, year };
@@ -21,6 +21,7 @@ public:
 		std::tm local;
 		localtime_s(&local, &time_tmp);
 		weekday = CWeekday(local.tm_wday);
+		fulldate = true;
 	}
 	CTimestamp(): CDate(), CTime() {
 		time_t rawtime;
@@ -29,13 +30,14 @@ public:
 		localtime_s(&local, &rawtime);
 		//nochmal debuggen
 		weekday = CWeekday(local.tm_wday);
+		fulldate = true;
 	}
 	void print();
 	~CTimestamp() {}
 
-	friend CTimestamp& printDateTime(CTimestamp& time) {
-		//time.fulldate = true;
-		return time;
+	std::ostream& printDateTime(std::ostream stream) {
+		CTimestamp::fulldate = true;
+		return stream;
 	}
 
 	friend std::ostream& operator<<(std::ostream& stream, CTimestamp& time);

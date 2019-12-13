@@ -10,7 +10,7 @@ void printNow()
 {
 	CTimestamp Now;
 
-	//cout << "Aktueller Zeitstempel: " << printDateTime << Now << endl << endl;
+	cout << "Aktueller Zeitstempel: " << printDateTime << Now << endl << endl;
 }
 
 int main()

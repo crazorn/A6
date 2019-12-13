@@ -69,11 +69,11 @@ std::ostream& operator<<(std::ostream& stream, CTimestamp& time) {
 	}
 	stream << std::setw(4) << tmp_weekday;
 	stream << time.getRefTime() << "\n";
-	/*
+	
 	if (time.fulldate) {
 		stream << time.getRefDate();
 	}
-	*/
+	
 	return stream;
 }
 

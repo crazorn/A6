@@ -4,9 +4,9 @@ void CTransaktion::print()
 {
 	cout << "Buchung ueber: " << Amount.toString() << endl;
 	cout << "--- von ---" << endl;
-	Account->print();
+	cout << Account;
 	cout << endl<< "--- an ---" << endl;
-	ContraAccount->print();
+	cout << ContraAccount;
 	cout << endl << "--- Verwendungszweck: " << ReasonForPayment << " ---" << endl << endl;
 }
 

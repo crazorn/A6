@@ -56,7 +56,7 @@ void CTransactionBatch::Remove_Transaction_FromList(CTransaktion* element)
 
 void CTransactionBatch::print() {
 	cout << "Tranaktionen (";
-	Timestamp.print();
+	cout << Timestamp;
 	cout << "):" << endl << endl;
 	for (auto transa : TransactionList) {
 		transa->print();

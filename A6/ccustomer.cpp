@@ -6,7 +6,7 @@ void CCustomer::print()
 	cout << name << " (Kd-Nr. " << id << ")\n";
 	address.print();
 	cout << "\ngeboren am: ";
-	this->birthday.print();
+	cout << this->birthday;
 	cout << "\nKonten:\n";
 	for (auto account : accountList)
 	{

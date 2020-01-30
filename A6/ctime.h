@@ -2,6 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 #include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 class CTime {
 	int hour;
@@ -26,7 +29,9 @@ public:
 	CTime& getRefTime() { return *this; }
 
 	friend std::ostream& operator<<(std::ostream& stream, CTime& time) {
-		stream << time.hour << ":" << time.minute << ":" << time.second;
+		char fill = stream.fill('0');
+		stream <<  setw(2)<<time.hour << flush << ":" << setw(2)<< time.minute << flush << ":" << setw(2)<< time.second << flush;
+		stream.fill(fill);
 		return stream;
 	}
 	~CTime(){}

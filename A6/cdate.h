@@ -4,6 +4,8 @@
 #include <iostream>
 #include "MethodeLib.h"
 
+using namespace std;
+
 class CDate
 {
 	int Day;
@@ -28,7 +30,9 @@ public:
 		printf("%02d.%02d.%04d", Day, Month, Year);
 	}
 	friend std::ostream& operator<<(std::ostream& stream, CDate& date) {
-		stream << date.Day <<"."<< date.Month << "." << date.Year;
+		char fill = stream.fill('0');
+		stream << setw(2) << date.Day << flush << "."<< setw(2) << date.Month << flush<< "." << setw(2) << date.Year << flush;
+		stream.fill(fill);
 		return stream;
 	}
 };

@@ -140,7 +140,7 @@ void CAccount::write(ostream& stream){
 	stream << balance.toString();
 }
 
-std::ostream& operator<<(std::ostream& stream, CAccount& acc) {
-	acc.write(stream);
+std::ostream& operator<<(std::ostream& stream, CAccount* acc) {
+	acc->write(stream);
 	return stream;
 }

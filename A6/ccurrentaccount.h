@@ -17,6 +17,5 @@ public:
 	}
 	static void load(stringstream& stream, vector<CBank*> BankList, vector<CCustomer*> CustomerList);
 	virtual void write(ostream& stream);
-	friend std::ostream& operator<<(std::ostream& stream, CCurrentAccount& acc);
-};
+	};
 

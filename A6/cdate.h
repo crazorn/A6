@@ -1,5 +1,6 @@
 #pragma once
 #include <time.h>
+#include <iomanip>
 #include <iostream>
 #include "MethodeLib.h"
 
@@ -27,7 +28,7 @@ public:
 		printf("%02d.%02d.%04d", Day, Month, Year);
 	}
 	friend std::ostream& operator<<(std::ostream& stream, CDate& date) {
-		stream << date.Day << "." << date.Month << "." << date.Year;
+		stream << date.Day <<"."<< date.Month << "." << date.Year;
 		return stream;
 	}
 };

@@ -98,7 +98,3 @@ void CSavingsAccount::write(ostream& stream) {
 	stream << intrestrate << " %";
 }
 
-std::ostream& operator<<(std::ostream& stream, CSavingsAccount& acc) {
-	acc.write(stream);
-	return stream;
-}

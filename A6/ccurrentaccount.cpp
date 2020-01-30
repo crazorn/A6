@@ -104,8 +104,5 @@ void CCurrentAccount::write(ostream& stream) {
 	stream << disposit->toString();
 }
 
-std::ostream& operator<<(std::ostream& stream, CCurrentAccount& acc) {
-	acc.write(stream);
-	return stream;
-}
+
 

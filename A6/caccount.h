@@ -37,5 +37,5 @@ public:
 	
 	virtual void write(ostream& str);
 
-	friend std::ostream& operator<<(std::ostream& stream, CAccount& acc);
+	friend std::ostream& operator<<(std::ostream& stream, CAccount* acc);
 };

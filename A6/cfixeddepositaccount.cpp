@@ -112,7 +112,3 @@ void CFixedDepositAccount::write(ostream& stream) {
 	stream << CSavingsAccount::GetIntrestrate() << " %" << endl;
 }
 
-std::ostream& operator<<(std::ostream& stream, CFixedDepositAccount& acc) {
-	acc.write(stream);
-	return stream;
-}

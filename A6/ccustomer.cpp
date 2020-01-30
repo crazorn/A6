@@ -10,7 +10,7 @@ void CCustomer::print()
 	cout << "\nKonten:\n";
 	for (auto account : accountList)
 	{
-		cout << *account << endl;
+		cout << account << endl;
 	}
 }
 
